@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Запуск приложения...</title>
+    <script type="text/javascript">
+        // Функция для попытки открытия приложения
+        function openApp() {
+            // Ваша ссылка на приложение
+            window.location.replace("myapp://open");
 
+            // (Опционально) Можно добавить задержку и потом редирект в Play Market,
+            // если вы хотите реализовать и этот случай тоже, но это сложнее.
+            // Для простого открытия установленного приложения этого достаточно.
+        }
+
+        // Вызываем функцию при загрузке страницы
+        window.onload = openApp;
+    </script>
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; }
+        p { color: #555; }
+    </style>
+</head>
+<body>
+    <p>Попытка запуска приложения...</p>
+    <p>Если ничего не происходит, убедитесь, что приложение установлено.</p>
+    </body>
+</html>
