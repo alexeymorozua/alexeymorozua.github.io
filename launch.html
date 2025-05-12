@@ -1,29 +1,77 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en"> <head>
     <meta charset="utf-8">
-    <title>Запуск приложения...</title>
-    <script type="text/javascript">
-        // Функция для попытки открытия приложения
-        function openApp() {
-            // Ваша ссылка на приложение
-            window.location.replace("myapp://open");
-
-            // (Опционально) Можно добавить задержку и потом редирект в Play Market,
-            // если вы хотите реализовать и этот случай тоже, но это сложнее.
-            // Для простого открытия установленного приложения этого достаточно.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launching SplitTimeFace...</title> <style>
+        /* Стили те же, что и раньше */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            padding: 30px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
         }
-
-        // Вызываем функцию при загрузке страницы
-        window.onload = openApp;
-    </script>
-    <style>
-        body { font-family: sans-serif; padding: 20px; text-align: center; }
-        p { color: #555; }
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+          margin-bottom: 15px;
+          color: #333;
+        }
+        p {
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .store-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .store-button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
-    <p>Попытка запуска приложения...</p>
-    <p>Если ничего не происходит, убедитесь, что приложение установлено.</p>
-    </body>
+    <div class="container">
+        <h1>SplitTimeFace</h1>
+        <p>Attempting to open the app... If nothing happens, the app might not be installed on your device.</p>
+
+        <a id="storeLink" class="store-button" href="https://play.google.com/store/apps/details?id=com.alexeymorozua.splittimeface">
+            Install / Open in Google Play
+        </a>
+    </div>
+
+    <script type="text/javascript">
+        (function() {
+            // --- Укажите ваш URI приложения ---
+            const appUri = "myapp://watchfacemanager"; // <<< УБЕДИТЕСЬ, ЧТО ЗДЕСЬ ПРАВИЛЬНЫЙ URI
+            // ---
+
+            // JS код остается тем же - пытается открыть приложение
+            window.location.href = appUri;
+
+            // На всякий случай, убедимся что ссылка на кнопке верная
+            const storeLinkElement = document.getElementById('storeLink');
+            if (storeLinkElement) {
+                 // storeLinkElement.href = "https://play.google.com/store/apps/details?id=com.alexeymorozua.splittimeface";
+            }
+        })();
+    </script>
+</body>
 </html>
